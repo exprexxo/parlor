@@ -1,0 +1,33 @@
+li {
+    float: left;
+}
+ul li div  {
+  width: 100px;
+  height: 160px;
+  background-color: #FFAAAA;
+  margin-left: 75px;
+  padding-left: 0px;
+}
+ul{
+list-style-type: none;
+  width: 600px;
+}
+.handwrapper {
+        text-align: center;
+    }
+#hand1 {background-color: #AAAA00;
+ -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);}
+#hand3 {background-color: #AA00AA;
+ -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);}
+#hand5 {background-color: #00AAAA;
+ -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);}
+#hand7 {background-color: #888888;}

@@ -1,0 +1,69 @@
+const hands = [
+  ["ad-1"],
+  ["d3", "c5", "h1", "c5", "h4"],
+  ["ad-2"],
+  ["h2", "c5", "h3"],
+  ["decks"],
+  ["h7"],
+  ["ad-3"],
+  ["d3", "c5", "h8"],
+  ["ad-4"]
+];
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyDKYuuAgJIcoIM8vBmY-1kf5wwgFw6Kng4',
+  authDomain: 'xikawa1111.firebaseapp.com',
+  projectId: 'xikawa1111'
+});
+
+// Initialize Cloud Firestore through Firebase
+var db = firebase.firestore();
+
+// Disable deprecated features
+db.settings({
+  timestampsInSnapshots: true
+});
+
+
+site = "https://google.com";
+const listHands = hands.map((hhands, i) => (
+  <li>
+    <div id={"hand" + i}>
+      {hhands.map((hcards, ii) => <a href={site}>{hcards}</a>)}
+    </div>
+  </li>
+));
+play();
+
+function play() {
+ db
+    .collection("tables")
+    .doc("dddddtable")
+    .onSnapshot(function(doc) {
+      console.log("Current data: ", doc.data());
+      var cow=doc.data().deck;//doc.data()
+      var cat=doc.data().players;//doc.data()
+   ReactDOM.render(
+  <div id="players">
+    <div id="handwrapper">
+      <ul>{cow}</ul>
+      <ul>{cat}</ul>
+    </div>
+  </div>,
+  document.getElementById("root")
+);
+   
+   
+   
+   
+    });
+}
+
+ReactDOM.render(
+  <div id="table">
+    <div id="handwrapper">
+      <ul>{listHands}</ul>
+    </div>
+  </div>,
+  document.getElementById("root")
+);
