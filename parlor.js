@@ -4,7 +4,6 @@ const functions = require('firebase-functions');
 
 /**
  * Responds to any HTTP request.
- *
  * @param {!express:Request} req HTTP request context.
  * @param {!express:Response} res HTTP response context.
  */
@@ -62,7 +61,7 @@ function createUsers(db,req,users) {
   .catch((err) => {
     console.log('Error writing document', err);
   });
-   var message = 'Table formed Current Players are : '+players+'<br/>Invite others : </br><a href="https://codepen.io/exprexxo/full/pLWevM/">Start the game with current players</a>';
+   var message = 'Table formed and the current Players are : '+players+'<br/>Invite others : </br><a href="https://codepen.io/exprexxo/full/pLWevM/">Start the game with current players</a>';
 
 
   }else if( action=='join'){
