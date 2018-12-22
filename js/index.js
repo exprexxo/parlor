@@ -1,6 +1,4 @@
 
-
-
 firebase.initializeApp({
   apiKey: "AIzaSyDKYuuAgJIcoIM8vBmY-1kf5wwgFw6Kng4",
   authDomain: "xikawa1111.firebaseapp.com",
